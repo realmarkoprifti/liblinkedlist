@@ -1,5 +1,6 @@
 clean:
-	cd src/ && rm -rf liblinkedlist.so
+	rm -rf build/
 
 install:
-	cd src/ && g++ -o liblinkedlist.so linkedlist.cpp -fPIC -shared
+	mkdir -p build
+	cd src/ && g++ -o liblinkedlist.so linkedlist.cpp -fPIC -shared && mv liblinkedlist.so ../build/
