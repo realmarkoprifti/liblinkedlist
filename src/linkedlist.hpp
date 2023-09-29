@@ -10,12 +10,6 @@
 struct ListNode
 {
     int val;
-    ListNode *next;
-};
-
-struct DoubleListNode
-{
-    int val;
     ListNode *prev;
     ListNode *next;
 };
