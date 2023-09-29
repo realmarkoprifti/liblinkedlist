@@ -13,6 +13,13 @@ struct ListNode
     ListNode *next;
 };
 
+struct DoubleListNode
+{
+    int val;
+    ListNode *prev;
+    ListNode *next;
+};
+
 
 ListNode *createLinkedList(int *numArr, int size);
 void insertElement(ListNode *head, int val);
