@@ -1,5 +1,6 @@
 #ifndef LINKEDLIST_H
 #define LINKEDLIST_H
+#define AUTHOR "Marko Prifti"
 
 /*
     Linked list library written in C++ by Marko Prifti (me)
