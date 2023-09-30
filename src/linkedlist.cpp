@@ -87,14 +87,12 @@ int listLength(ListNode *head)
 {
     int length = 0;
 
-    ListNode *ptr = new ListNode;
+    ListNode *ptr = NULL;
 
     for (ptr = head; ptr != NULL; ptr = ptr->next)
     {
         length++;
     }
-
-    delete ptr;
 
     return length;
 }
@@ -102,12 +100,11 @@ int listLength(ListNode *head)
 
 void printLinkedList(ListNode *head)
 {
-    ListNode *ptr = new ListNode;
+    ListNode *ptr = NULL;
 
     for (ptr = head; ptr != NULL; ptr = ptr->next)
     {
         std::cout << ptr->val << std::endl;
     }
 
-    delete ptr;
 }
