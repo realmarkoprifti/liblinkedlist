@@ -4,8 +4,6 @@
 
 /*
     Linked list library written in C++ by Marko Prifti (me)
-    Will be extended to doubly-linked in the future
-    Will add a deleteElement function
 */
 
 struct ListNode
