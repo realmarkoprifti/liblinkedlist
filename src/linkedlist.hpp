@@ -11,6 +11,8 @@ struct ListNode
     int val;
     ListNode *prev;
     ListNode *next;
+    bool isHead;
+    bool isTail;
 };
 
 
