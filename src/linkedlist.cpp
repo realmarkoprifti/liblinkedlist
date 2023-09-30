@@ -52,6 +52,7 @@ ListNode *createDoublyLinkedList(int *numArr, int size)
     {
         ListNode *newNode = new ListNode;
         newNode->val = numArr[i];
+        newNode->prev = NULL;
         newNode->next = head;
         newNode->isHead = false;
         newNode->isTail = false;
@@ -76,17 +77,10 @@ ListNode *createDoublyLinkedList(int *numArr, int size)
     for (ptr = head; ptr != NULL; ptr = ptr->next)
     {
         ptr->prev = prev;
-
-        if (ptr->isHead)
-        {
-            ptr->prev = NULL;
-        }
-
         prev = ptr;
     }
 
     delete ptr;
-    delete prev;
 
     return head;
 }
