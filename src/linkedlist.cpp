@@ -104,6 +104,19 @@ int listLength(ListNode *head)
     }
 
     delete ptr;
-    
+
     return length;
+}
+
+
+void printLinkedList(ListNode *head)
+{
+    ListNode *ptr = new ListNode;
+
+    for (ptr = head; ptr != NULL; ptr = ptr->next)
+    {
+        std::cout << ptr->val << std::endl;
+    }
+
+    delete ptr;
 }
