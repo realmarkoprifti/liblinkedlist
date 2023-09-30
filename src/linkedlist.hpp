@@ -23,5 +23,6 @@ void deleteElement(ListNode *head, int val);
 int listLength(ListNode *head);
 ListNode *sortList(ListNode *head);
 void printLinkedList(ListNode *head);
+void freeList(ListNode *head);
 
 #endif
