@@ -9,8 +9,7 @@ ListNode *createLinkedList(int *numArr, int size)
         return NULL;
     }
 
-    ListNode *head = new ListNode;
-    head = NULL;
+    ListNode *head = NULL;
 
     for (int i = 0; i < size; i++)
     {
@@ -45,8 +44,7 @@ ListNode *createDoublyLinkedList(int *numArr, int size)
         return NULL;
     }
 
-    ListNode *head = new ListNode;
-    head = NULL;
+    ListNode *head = NULL;
 
     for (int i = 0; i < size; i++)
     {
@@ -70,9 +68,8 @@ ListNode *createDoublyLinkedList(int *numArr, int size)
         head = newNode;
     }
 
-    ListNode *ptr = new ListNode;
-    ListNode *prev = new ListNode;
-    prev = NULL;
+    ListNode *ptr = NULL;
+    ListNode *prev = NULL;
 
     for (ptr = head; ptr != NULL; ptr = ptr->next)
     {
@@ -112,24 +109,5 @@ void printLinkedList(ListNode *head)
         std::cout << ptr->val << std::endl;
     }
 
-    delete ptr;
-}
-
-
-void freeList(ListNode *head)
-{
-    ListNode *tmp = new ListNode;
-    ListNode *ptr = new ListNode;
-    tmp = NULL;
-
-
-    for (ptr = head; ptr != NULL; ptr = ptr->next)
-    {
-        tmp = ptr->next;
-        delete ptr;
-        ptr = tmp;   
-    }
-
-    delete tmp;
     delete ptr;
 }
