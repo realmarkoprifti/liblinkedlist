@@ -108,3 +108,17 @@ void printLinkedList(ListNode *head)
     }
 
 }
+
+
+void freeList(ListNode *head)
+{
+    ListNode *ptr = head;
+
+    while (ptr != NULL)
+    {
+        ListNode *tmp = ptr->next;
+        delete ptr;
+        ptr = tmp;
+
+    }
+}
