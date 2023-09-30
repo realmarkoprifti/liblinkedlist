@@ -90,3 +90,20 @@ ListNode *createDoublyLinkedList(int *numArr, int size)
 
     return head;
 }
+
+
+int listLength(ListNode *head)
+{
+    int length = 0;
+
+    ListNode *ptr = new ListNode;
+
+    for (ptr = head; ptr != NULL; ptr = ptr->next)
+    {
+        length++;
+    }
+
+    delete ptr;
+    
+    return length;
+}
