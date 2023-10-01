@@ -172,6 +172,12 @@ ListNode *deleteElement(ListNode *head, int val)
             } 
         }
 
+        // Just for the aesthetics
+        else
+        {
+            continue;
+        }
+
         prev = ptr;
     }
 
