@@ -187,5 +187,37 @@ ListNode *deleteElement(ListNode *head, int val)
 
 void insertElement(ListNode *head, int val)
 {
-    
+    ListNode *ptr = NULL;
+    ListNode *newNode = new ListNode;
+
+
+    for (ptr = head; ptr != NULL; ptr = ptr->next)
+    {
+        if (ptr->isTail)
+        {
+            if (ptr->prev != NULL)
+            {
+                newNode->val = val;
+                ptr->next = newNode;
+                newNode->prev = ptr;
+                ptr->isTail = false;
+                newNode->isTail = true;
+                newNode->next = NULL;
+
+                return;
+            }
+
+            else
+            {
+                newNode->val = val;
+                ptr->next = newNode;
+                newNode->next = NULL;
+                newNode->prev = NULL;
+                ptr->isTail = false;
+                newNode->isTail = true;
+            }
+        }
+
+        // prev = ptr;
+    }
 }
