@@ -183,3 +183,9 @@ ListNode *deleteElement(ListNode *head, int val)
 
     return head;
 }
+
+
+void insertElement(ListNode *head, int val)
+{
+    
+}
