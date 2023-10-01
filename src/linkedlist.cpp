@@ -2,18 +2,18 @@
 #include "linkedlist.hpp"
 
 
-ListNode *createLinkedList(int *numArr, int size)
+ListNode* createLinkedList(int *numArr, int size)
 {
     if (size <= 1)
     {
         return NULL;
     }
 
-    ListNode *head = NULL;
+    ListNode* head = NULL;
 
     for (int i = 0; i < size; i++)
     {
-        ListNode *newNode = new ListNode;
+        ListNode* newNode = new ListNode;
         newNode->val = numArr[i];
         newNode->prev = NULL;
         newNode->next = head;
@@ -37,18 +37,18 @@ ListNode *createLinkedList(int *numArr, int size)
 }
 
 
-ListNode *createDoublyLinkedList(int *numArr, int size)
+ListNode* createDoublyLinkedList(int *numArr, int size)
 {
     if (size <= 1)
     {
         return NULL;
     }
 
-    ListNode *head = NULL;
+    ListNode* head = NULL;
 
     for (int i = 0; i < size; i++)
     {
-        ListNode *newNode = new ListNode;
+        ListNode* newNode = new ListNode;
         newNode->val = numArr[i];
         newNode->prev = NULL;
         newNode->next = head;
@@ -68,8 +68,8 @@ ListNode *createDoublyLinkedList(int *numArr, int size)
         head = newNode;
     }
 
-    ListNode *ptr = NULL;
-    ListNode *prev = NULL;
+    ListNode* ptr = NULL;
+    ListNode* prev = NULL;
 
     for (ptr = head; ptr != NULL; ptr = ptr->next)
     {
@@ -83,11 +83,11 @@ ListNode *createDoublyLinkedList(int *numArr, int size)
 }
 
 
-int listLength(ListNode *head)
+int listLength(ListNode* head)
 {
     int length = 0;
 
-    ListNode *ptr = NULL;
+    ListNode* ptr = NULL;
 
     for (ptr = head; ptr != NULL; ptr = ptr->next)
     {
@@ -98,9 +98,9 @@ int listLength(ListNode *head)
 }
 
 
-void printLinkedList(ListNode *head)
+void printLinkedList(ListNode* head)
 {
-    ListNode *ptr = NULL;
+    ListNode* ptr = NULL;
 
     for (ptr = head; ptr != NULL; ptr = ptr->next)
     {
@@ -110,13 +110,13 @@ void printLinkedList(ListNode *head)
 }
 
 
-void freeList(ListNode *head)
+void freeList(ListNode* head)
 {
-    ListNode *ptr = head;
+    ListNode* ptr = head;
 
     while (ptr != NULL)
     {
-        ListNode *tmp = ptr->next;
+        ListNode* tmp = ptr->next;
         delete ptr;
         ptr = tmp;
 
@@ -124,16 +124,16 @@ void freeList(ListNode *head)
 }
 
 
-ListNode *deleteElement(ListNode *head, int val)
+ListNode* deleteElement(ListNode* head, int val)
 {
-    ListNode *ptr = NULL;
-    ListNode *prev = head;
+    ListNode* ptr = NULL;
+    ListNode* prev = head;
 
     for (ptr = head; ptr != NULL; ptr = ptr->next)
     {
         if (ptr->isHead && ptr->val == val)
         {
-            ListNode *tmp = ptr->next;
+            ListNode* tmp = ptr->next;
             delete ptr;
             head = tmp;
 
@@ -185,10 +185,10 @@ ListNode *deleteElement(ListNode *head, int val)
 }
 
 
-void insertElement(ListNode *head, int val)
+void insertElement(ListNode* head, int val)
 {
-    ListNode *ptr = NULL;
-    ListNode *newNode = new ListNode;
+    ListNode* ptr = NULL;
+    ListNode* newNode = new ListNode;
 
 
     for (ptr = head; ptr != NULL; ptr = ptr->next)
