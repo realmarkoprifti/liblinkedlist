@@ -217,7 +217,5 @@ void insertElement(ListNode *head, int val)
                 newNode->isTail = true;
             }
         }
-
-        // prev = ptr;
     }
 }
