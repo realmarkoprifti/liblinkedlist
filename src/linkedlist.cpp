@@ -127,32 +127,29 @@ void freeList(ListNode *head)
 ListNode *deleteElement(ListNode *head, int val)
 {
     ListNode *ptr = NULL;
+    ListNode *prev = head;
 
     for (ptr = head; ptr != NULL; ptr = ptr->next)
     {
         if (ptr->isHead && ptr->val == val)
         {
-            ptr->isHead = false;
             ListNode *tmp = ptr->next;
+            delete ptr;
             tmp->isHead = true;
             tmp->prev = NULL;
-            delete ptr;
             head = tmp;
         }
 
-        else if (ptr->next->isTail && ptr->next->val == val)
+        else if (ptr->isTail && ptr->val == val)
         {
-            ptr->next->isTail = false;
-            delete ptr->next;
-            ptr->next = NULL;
-            ptr->isTail = true;
+            delete ptr;
+            prev->isTail = true;
+            prev->next = NULL;
+            ptr = prev;
+
         }
 
-        else 
-        {
-              
-        }
-
+        prev = ptr;
     }
 
     return head;
