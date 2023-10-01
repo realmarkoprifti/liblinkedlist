@@ -24,6 +24,7 @@ int listLength(ListNode* head);
 ListNode* sortList(ListNode* head);
 void printLinkedList(ListNode* head);
 void freeList(ListNode* head);
+ListNode* searchElement(ListNode* head, int val);
 
 
 #endif

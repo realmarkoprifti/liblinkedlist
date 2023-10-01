@@ -219,3 +219,19 @@ void insertElement(ListNode* head, int val)
         }
     }
 }
+
+
+ListNode* searchElement(ListNode* head, int val)
+{
+    ListNode* ptr = NULL;
+
+    for (ptr = head; ptr != NULL; ptr = ptr->next)
+    {
+        if (ptr->val == val)
+        {
+            return ptr;
+        }
+    }
+
+    return NULL;
+}
