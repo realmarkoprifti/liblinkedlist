@@ -135,9 +135,15 @@ ListNode *deleteElement(ListNode *head, int val)
         {
             ListNode *tmp = ptr->next;
             delete ptr;
-            tmp->isHead = true;
-            tmp->prev = NULL;
+            //tmp->isHead = true;
+            // tmp->prev = NULL;
             head = tmp;
+
+            if (head != NULL)
+            {
+                head->isHead = true;
+                head->prev = NULL;
+            }
         }
 
         else if (ptr->isTail && ptr->val == val)
