@@ -142,7 +142,10 @@ ListNode *deleteElement(ListNode *head, int val)
 
         else if (ptr->next->isTail && ptr->next->val == val)
         {
-
+            ptr->next->isTail = false;
+            delete ptr->next;
+            ptr->next = NULL;
+            ptr->isTail = true;
         }
 
         else 
