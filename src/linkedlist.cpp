@@ -135,8 +135,6 @@ ListNode *deleteElement(ListNode *head, int val)
         {
             ListNode *tmp = ptr->next;
             delete ptr;
-            //tmp->isHead = true;
-            // tmp->prev = NULL;
             head = tmp;
 
             if (head != NULL)
@@ -153,6 +151,25 @@ ListNode *deleteElement(ListNode *head, int val)
             prev->next = NULL;
             ptr = prev;
 
+        }
+
+        else if (ptr->val == val)
+        {
+
+            // Check if the list is doubly linked
+            if (ptr->prev != NULL)
+            {
+                prev->next = ptr->next;
+                ptr->next->prev = prev;
+                delete ptr;
+            }   
+            
+            // Else it's singly linked
+            else 
+            {
+                prev->next = ptr->next;
+                delete ptr;
+            } 
         }
 
         prev = ptr;
