@@ -122,3 +122,9 @@ void freeList(ListNode *head)
 
     }
 }
+
+
+void deleteElement(ListNode *head, int val)
+{
+
+}
