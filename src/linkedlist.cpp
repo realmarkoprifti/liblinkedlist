@@ -237,6 +237,14 @@ ListNode* searchElement(ListNode* head, int val)
 }
 
 
+void swap(ListNode* node1, ListNode* node2)
+{
+    int first_val = node1->val;
+    node1->val = node2->val;
+    node2->val = first_val;
+}
+
+
 void sortList(ListNode* head)
 {
     /*
