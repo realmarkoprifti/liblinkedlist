@@ -235,3 +235,12 @@ ListNode* searchElement(ListNode* head, int val)
 
     return NULL;
 }
+
+
+void sortList(ListNode* head)
+{
+    /*
+        This function uses the Bubble Sort
+        algorithm to sort the list
+    */
+}
