@@ -237,11 +237,20 @@ ListNode* searchElement(ListNode* head, int val)
 }
 
 
-void swap(ListNode* node1, ListNode* node2)
+bool isSorted(ListNode* head)
 {
-    int first_val = node1->val;
-    node1->val = node2->val;
-    node2->val = first_val;
+    for (ListNode* ptr = head; ptr != NULL; ptr = ptr->next)
+    {
+        if (!ptr->isTail)
+        {
+            if (ptr->val > ptr->next->val)
+            {
+                return false;
+            }
+        }
+    }
+
+    return true;
 }
 
 
@@ -251,4 +260,23 @@ void sortList(ListNode* head)
         This function uses the Bubble Sort
         algorithm to sort the list
     */
+    bool sorted = isSorted(head);
+
+    while (!sorted)
+    {
+        for (ListNode* ptr = head; ptr != NULL; ptr = ptr->next)
+        {
+            if (!ptr->isTail)
+            {
+                if (ptr->val > ptr->next->val)
+                {
+                    int tmp = ptr->val;
+                    ptr->val = ptr->next->val;
+                    ptr->next->val = tmp;
+                }
+            }
+        }
+
+        sorted = isSorted(head);
+    }
 }
