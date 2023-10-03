@@ -259,7 +259,7 @@ void sortList(ListNode* head)
 {
     /*
         This function uses the Bubble Sort
-        algorithm to sort the list
+        algorithm to sort the list...
     */
     bool sorted = isSorted(head);
 
