@@ -6,25 +6,34 @@
     Linked list library written in C++ by Marko Prifti (me)
 */
 
-struct ListNode
+class LinkedList
 {
-    int val;
-    ListNode* prev;
-    ListNode* next;
-    bool isHead;
-    bool isTail;
+    private:
+        struct ListNode
+        {
+            int val;
+            ListNode* prev;
+            ListNode* next;
+        };
+
+        ListNode* head;
+        ListNode* tail;
+        int length;
+
+        void free();
+        void createSinglyLinkedList(int* numArr, int size);
+        void createDoublyLinkedList(int* numArr, int size);
+    
+    public:
+        LinkedList(int* numArr, int arrSize, int type);
+        ~LinkedList();
+
+        void insert(int val);
+        void delElem(int val);
+        void length();
+        void sort();
+        ListNode* search(int val);
 };
-
-
-ListNode* createLinkedList(int *numArr, int size);
-ListNode* createDoublyLinkedList(int *numArr, int size);
-void insertElement(ListNode* head, int val);
-ListNode* deleteElement(ListNode* head, int val);
-int listLength(ListNode* head);
-void sortList(ListNode* head);
-void printLinkedList(ListNode* head);
-void freeList(ListNode* head);
-ListNode* searchElement(ListNode* head, int val);
 
 
 #endif
