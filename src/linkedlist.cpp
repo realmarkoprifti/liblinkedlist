@@ -1,6 +1,7 @@
 #include <iostream>
 #include "linkedlist.hpp"
 
+// I HATE COMMENTS
 
 ListNode* createLinkedList(int *numArr, int size)
 {
