@@ -62,7 +62,7 @@ LinkedList::LinkedList(int* numArr, int arrSize, int type)
     listType = type;
 }
 
-
+// Automatically frees the list when the object is deconstructured
 LinkedList::~LinkedList()
 {
     ListNode* ptr = head;
@@ -77,6 +77,7 @@ LinkedList::~LinkedList()
 }
 
 
+// Returns an int containing the lists' length
 int LinkedList::length()
 {
     int length = 0;
@@ -90,6 +91,7 @@ int LinkedList::length()
 }
 
 
+// Inserts a node at the end of the list
 void LinkedList::insert(int val)
 {
     ListNode* newNode = new ListNode;
@@ -121,6 +123,7 @@ void LinkedList::insert(int val)
 }
 
 
+// Deletes the first occurrence of a node with the given value
 void LinkedList::delNode(int val)
 {
     ListNode* prev = head;
@@ -182,6 +185,7 @@ void LinkedList::delNode(int val)
 }
 
 
+// Returns true if the list is sorted
 bool LinkedList::isSorted()
 {
     for (ListNode* ptr = head; ptr != NULL; ptr = ptr->next)
@@ -199,6 +203,7 @@ bool LinkedList::isSorted()
 }
 
 
+// Sorts the list using the bubble sort algorithm
 void LinkedList::sort()
 {
     /*
@@ -227,6 +232,7 @@ void LinkedList::sort()
 }
 
 
+// Prints the list's node values
 void LinkedList::print()
 {
     for (ListNode* ptr = head; ptr != NULL; ptr = ptr->next)
@@ -236,6 +242,7 @@ void LinkedList::print()
 }
 
 
+// Uses Linear Seach to search for a node with the given value. Returns the node if found, else NULL.
 ListNode* LinkedList::lsearch(int val)
 {
     for (ListNode* ptr = head; ptr != NULL; ptr = ptr->next)
