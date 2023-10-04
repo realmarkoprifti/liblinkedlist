@@ -58,6 +58,8 @@ LinkedList::LinkedList(int* numArr, int arrSize, int type)
             "Invalid type of linked list. 1 -> Singly linked list, 2 -> Doubly linked list"
             );
     }
+
+    listType = type;
 }
 
 
@@ -121,57 +123,58 @@ void LinkedList::insert(int val)
 
 void LinkedList::delNode(int val)
 {
-
-    ListNode* ptr = NULL;
     ListNode* prev = head;
 
-    for (ptr = head; ptr != NULL; ptr = ptr->next)
+    for (ListNode* ptr = head; ptr != NULL; ptr = ptr->next)
     {
-        if (head == ptr && ptr->val == val)
+        if (ptr->val == val)
         {
-            std::cout << "Deleting head node..." << std::endl;
-            ListNode* tmp = ptr->next;
-            delete ptr;
-            head = tmp;
-
-            if (head != NULL)
+            if (ptr == head)
             {
-                head->prev = NULL;
+                if (listType == 1)
+                {
+                    ListNode* tmp = ptr->next;
+                    delete ptr;
+                    head = tmp;
+                }
+
+                else
+                {
+                    ListNode* tmp = ptr->next;
+                    tmp->prev = NULL;
+                    delete ptr;
+                    head = tmp;
+                }
             }
-        }
 
-        else if (tail == ptr && ptr->val == val)
-        {
-            delete ptr;
-            tail = prev;
-            prev->next = NULL;
-            ptr = prev;
-
-        }
-
-        else if (ptr->val == val)
-        {
-
-            // Check if the list is doubly linked
-            if (ptr->prev != NULL)
+            else if (ptr == tail)
             {
-                prev->next = ptr->next;
-                ptr->next->prev = prev;
+                prev->next = NULL;
                 delete ptr;
-            }   
-            
-            // Else it's singly linked
-            else 
-            {
-                prev->next = ptr->next;
-                delete ptr;
-            } 
-        }
+                tail = prev;
+            }
 
-        // Just for the aesthetics
-        else
-        {
-            continue;
+            else
+            {
+                if (listType == 1)
+                {
+                    ListNode* tmp = ptr->next;
+                    prev->next = tmp;
+                    delete ptr;
+
+                    return;
+                }
+
+                else
+                {
+                    ListNode* tmp = ptr->next;
+                    prev->next = tmp;
+                    tmp->prev = prev;
+
+                    delete ptr;
+                    return;
+                }
+            }
         }
 
         prev = ptr;
@@ -230,4 +233,18 @@ void LinkedList::print()
     {
         std::cout << ptr->val << std::endl;
     }
+}
+
+
+ListNode* LinkedList::lsearch(int val)
+{
+    for (ListNode* ptr = head; ptr != NULL; ptr = ptr->next)
+    {
+        if (ptr->val == val)
+        {
+            return ptr;
+        }
+    }
+
+    return NULL;
 }

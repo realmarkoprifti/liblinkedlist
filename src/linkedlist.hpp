@@ -16,14 +16,16 @@ struct ListNode
 class LinkedList
 {
     private:
-        struct ListNode
-        {
-            int val;
-            ListNode* prev;
-            ListNode* next;
-        };
+        //struct ListNode
+        //{
+        //    int val;
+        //    ListNode* prev;
+        //    ListNode* next;
+        //};
         ListNode* head;
         ListNode* tail;
+        int listType;
+
 
         bool isSorted();
     
@@ -36,9 +38,9 @@ class LinkedList
         void delNode(int val);
         int length();
         void sort();
-        ListNode* search(int val);
         void print();
+        ListNode* lsearch(int val);
+        
 };
-
 
 #endif
